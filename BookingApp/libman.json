@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    "library":"fontawesome@6.1.2",
+    "destination":"wwwroot/lib/fontawesome-free-6.1.2-web",
+    "files":
+    [
+      "all.js",
+      "all.css"    ]
+  ]
+}

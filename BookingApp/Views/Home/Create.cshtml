@@ -1,0 +1,55 @@
+﻿@model BookingProject.Core.Models.BookingAddModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Add Booking</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+   @using (Html.BeginForm())
+    {
+       <div class="form-group" >
+            @Html.LabelFor(model => model.user_email)
+            @Html.EditorFor(model => model.user_email)
+            @Html.ValidationMessageFor(model => model.user_email)
+        </div>
+       <div class="form-group" >
+            @Html.LabelFor(model => model.starts_at)
+            @Html.EditorFor(model => model.starts_at)
+            @Html.ValidationMessageFor(model => model.starts_at)
+        </div>
+       <div class="form-group" >
+            @Html.LabelFor(model => model.booked_for)
+            @Html.EditorFor(model => model.booked_for)
+            @Html.ValidationMessageFor(model => model.booked_for)
+        </div>
+        <div class="form-group" >
+            @Html.LabelFor(model => model.apartment_id)
+            @Html.EditorFor(model => model.apartment_id )
+            @Html.ValidationMessageFor(model => model.apartment_id)
+        </div>
+
+        <div class="form-group" >
+            @Html.LabelFor(model => model.confirmed)
+            @Html.EditorFor(model => model.confirmed)
+            @Html.ValidationMessageFor(model => model.confirmed)
+        </div>
+        <div class="form-control" >
+            <input type="submit" value="Submit" class="btn accordion-button" />
+            <input type="reset" value="Reset" class="btn accordion-button" />
+        </div>
+        }
+    </div>
+</div>
+
+<div>
+    <a href="@Url.Action("Index")" >Back to Booking List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

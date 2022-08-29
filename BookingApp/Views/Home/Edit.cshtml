@@ -1,0 +1,46 @@
+﻿@model BookingProject.Core.Models.BookingModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Booking Model</h4>
+<hr />
+<div class="row">
+ @using (Html.BeginForm())
+    {
+         @Html.HiddenFor(model => model.booking_id)
+       <div class="form-group" >
+            @Html.LabelFor(model => model.starts_at)
+            @Html.EditorFor(model => model.starts_at)
+            @Html.ValidationMessageFor(model => model.starts_at)
+        </div>
+       <div class="form-group" >
+            @Html.LabelFor(model => model.booked_for)
+            @Html.EditorFor(model => model.booked_for)
+            @Html.ValidationMessageFor(model => model.booked_for)
+        </div>
+        <div class="form-group" >
+            @Html.LabelFor(model => model.confirmed)
+            @Html.EditorFor(model => model.confirmed)
+            @Html.ValidationMessageFor(model => model.confirmed)
+        </div>
+        <div class="form-control" >
+            <input type="submit" value="Submit" class="btn accordion-button" />
+            <input type="reset" value="Reset" class="btn accordion-button" />
+        </div>
+        }
+    </div>
+</div>
+
+<div>
+    <a href="@Url.Action("Index")" >Back to Booking List</a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

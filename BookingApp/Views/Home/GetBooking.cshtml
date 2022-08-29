@@ -1,0 +1,75 @@
+﻿@model BookingProject.Core.Models.BookingModel
+
+@{
+    ViewData["Title"] = "GetBooking";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>Get Booking</h1>
+
+
+<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.user_fullname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.user_email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.booking_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.starts_at)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.booked_at)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.booked_for)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apartment_name)
+            </th>
+            <th>
+                Confirmed 
+            </th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(Model => Model.user_fullname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.user_email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.booking_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.starts_at)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.booked_at)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.booked_for)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.apartment_name)
+            </td>
+            <td>
+                        @if(@Model.confirmed == 0)
+                        {
+                         <i class="fa-regular fa-rectangle-xmark"></i>            
+                        }
+                        else
+                        {
+<i class="fa-solid fa-check"></i>       
+                        }
+            </td>
+
+        </tr>
+}
+</table>
